@@ -1,0 +1,110 @@
+
+/* Base reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section container: responsive wrapping layout */
+.section{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background-color: #e6fffb; /* gentle background */
+}
+
+/* Each card wrapper - allows flexible sizing */
+.individual{
+    flex: 1 1 220px; /* grow, shrink, base */
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card styles */
+.item{
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(11, 37, 44, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.item:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(11, 37, 44, 0.12);
+}
+
+.item h3{
+    font-size: 1.65rem;
+    color: #063237;
+    margin-bottom: 0.25rem;
+    font-size: larger;
+}
+
+.item p{
+    color: #24343b;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    align-items: center;
+}
+
+.item p:nth-of-type(2){
+    /* description style (second p) */
+    color: #465a5f;
+    font-size: 0.92rem;
+}
+
+.item p.price{
+    font-weight: 700;
+    color: #0b6623;
+}
+
+.item img{
+    height: 160px;
+    border-radius: 8px;
+    margin-top: 0.25rem;
+    align-items: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+    .item img{ height: 150px; }
+    .section{ padding: 1.25rem; gap: 1rem; }
+}
+
+@media (max-width: 640px){
+    .individual{ flex: 1 1 100%; max-width: 100%; }
+    .item{ padding: 0.9rem; }
+    .item img{ height: 200px; }
+    .section{ padding: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .item, .item:hover{ transition: none; transform: none; }
+}
+.buttons{
+    display: flex;
+    gap:2px;
+    height: 20%;
+}
+.menu{
+    padding: 10px;
+    display: flex;
+    gap: 3px;
+};
+
+.special{
+    background-color: grlinear-gradient(90deg,#afd426,#525e19);
+}
